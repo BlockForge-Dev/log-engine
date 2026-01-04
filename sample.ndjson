@@ -1,0 +1,5 @@
+{"ts": 1, "method":"eth_getBalance", "status":200, "latency_ms":120}
+{"ts": 2, "method":"eth_getBalance", "status":500, "latency_ms":2200}
+{"ts": 3, "method":"eth_getBalance", "status":200, "latency_ms":1800}
+{"ts": 4, "method":"eth_blockNumber", "status":200, "latency_ms":50}
+{"ts": 5, "method":"eth_blockNumber", "status":200, "latency_ms":60}

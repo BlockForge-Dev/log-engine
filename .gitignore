@@ -1,0 +1,22 @@
+/target
+# Rust build artifacts
+/target/
+
+# Rust fmt backup files
+**/*.rs.bk
+
+# (Optional) If you are building a library, don't commit Cargo.lock.
+# For a binary CLI app, it's okay to commit Cargo.lock for reproducible builds.
+# Cargo.lock
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
