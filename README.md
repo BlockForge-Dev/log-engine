@@ -1,3 +1,42 @@
+
+        ┌───────────────┐
+        │   Input Src   │
+        │ file / stdin  │
+        └───────┬───────┘
+                │ bytes
+                v
+        ┌───────────────┐
+        │  Reader/I/O   │   (BufRead lines)
+        └───────┬───────┘
+                │ line (String/Bytes)
+                v
+        ┌───────────────┐
+        │ Parser/Decoder│   (NDJSON → LogEvent)
+        └───────┬───────┘
+                │ LogEvent | ParseError
+                v
+        ┌───────────────┐
+        │ Normalizer     │  (derive keys/fields, defaults)
+        └───────┬───────┘
+                │ NormalizedEvent
+                v
+        ┌───────────────┐
+        │ Aggregator     │  (HashMap<Key, AggState>)
+        │ + Windows      │  (optional in Q1: all-time / simple window)
+        └───────┬───────┘
+                │ Snapshot / Metrics
+                v
+        ┌───────────────┐
+        │ Detector       │  (thresholds/rules)
+        └───────┬───────┘
+                │ AnomalyEvent(s)
+                v
+   ┌────────────┴─────────────┐
+   │           Output           │
+   │ CLI summary / JSON / sink  │
+   └────────────────────────────┘
+
+
 # log-engine (v0.1.0)
 
 Offline NDJSON log analyzer in Rust.
