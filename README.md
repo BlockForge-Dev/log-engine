@@ -1,4 +1,4 @@
-
+This log engine processes NDJSON logs in a streaming, line-by-line fashion and aggregates metrics by a selected key (default: method). It is designed for local processing of large log files (hundreds of MB to ~1GB) and supports thousands of groups efficiently. Very high-cardinality keys (e.g., grouping by IP with hundreds of thousands/millions of unique values) may require additional controls (top-K/eviction), planned for later versions.
         ┌───────────────┐
         │   Input Src   │
         │ file / stdin  │
