@@ -65,3 +65,9 @@ docs/data_model.md
 
 docs/decisions.md
 ```
+
+
+
+This CLI processes NDJSON logs in a streaming fashion (line-by-line) and aggregates metrics per group key.
+It is designed for local files up to ~1GB and up to tens of thousands of unique groups.
+Extremely high-cardinality keys (e.g., grouping by IP with millions of unique IPs) may cause high memory usage.
